@@ -22,8 +22,6 @@ my_company = {
     "name": "Danco Inc",
     "address": "123 Computer Drive",
     "sales": {
-        "2021": 650099,
-        "2022": 786770,
         "2023": 1023350,
         "2024": 1500356,
     }
