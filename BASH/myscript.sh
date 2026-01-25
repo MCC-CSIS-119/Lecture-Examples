@@ -25,36 +25,58 @@ echo -e "Password: ${password}"
 
 
 # 4. ###########################
-echo "Enter your name: "
-read name
-
-if [ $name == "Dan" ]
+if [ $age -gt 18 ]
 then
-    echo "Hey, that's my name"
+    echo "You're old enough to vote"
 else
-    echo "Nice name ${name}"
+    echo "You can't vote yet"
 fi
 
 
 # 5. ###########################
 echo "Enter your name: "
-read name
+read NAME
 
 echo "Enter your age: "
 read age
 
-if [[ $name == "Dan" && $age -lt 50 ]]
+if [[ $NAME == "Dan" && $age -gt 17 ]]
 then
-    echo "Hey, that's my name and you're younger than I am!"
-elif [ $name == "Dan" ]
-then
-    echo "Hey, that's my name but you're NOT younger than I am"
+    echo "We have the same name and you are old enough to vote"
 else
-    echo "Nice name ${name}"
+    echo "One of the two conditions was not met"
 fi
 
-
 # 6. ###########################
+# Note: Requires sudo privs 
+# visudo
+# %mcc ALL=(root) NOPASSWD: /usr/bin/du
+for dir in /home/*; do
+    sudo du -sh $dir
+done
+
+
+# 7. ###########################
+while true
+do
+    date
+    ./hello.sh
+    sleep 2
+done
+
+
+# 8. ##########################
+true
+echo $?
+
+
+false
+echo $?
+
+
+
+
+
 ls -1 /var/www/html/
 ls -1 /var/www/html | grep ^S
 
@@ -104,5 +126,5 @@ function print_some_params() {
     echo ""
 }
 
-print_some_params "hello" "World"
-print_some_params "World" "hello"
+print_some_params "hello" "World!"
+print_some_params "Please" "halp"
